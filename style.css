@@ -14,7 +14,7 @@ body {
 
 ul {
 	width: 100%;
-	display: none;
+	/*display: none;*/
 }
 ul li {
 	display:block;
@@ -27,69 +27,6 @@ border-width: 1px;
 border-color: #707070;
 }
 
-nav {
-
-width: 0%;
-float: right;
-
-}
-
-
-.container{
-	height: 100%;
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-end;
-}
-
-#checked-menu{
-	position: absolute;
-	opacity: 0;
-}
-
-label{
-	cursor: pointer;
-	position: relative;
-	display: block;
-	height: 22px;
-	width: 30px;
-}
-
-label span{
-	position: absolute;
-	display: block;
-	height: 5px;
-	width: 100%;
-	border-radius: 30px;
-	background: #E7E9E6;
-	transition: 0.25s ease-in-out;
-}
-
-label span:nth-child(1){
-	top:0;
-}
-
-label span:nth-child(2){
-	top:8px;
-}
-
-label span:nth-child(3){
-	top:16px;
-}
-
-#checked-menu:checked + label span:nth-child(1){
-	transform: rotate(-45deg);
-	top: 8px;
-}
-
-#checked-menu:checked + label span:nth-child(2){
-	opacity: 0;
-}
-
-#checked-menu:checked + label span:nth-child(3){
-	transform: rotate(45deg);
-	top: 8px;
-}
 
 header{
 	background-image: url('imagens/banner.png');
@@ -118,9 +55,10 @@ header img{
 	height: 50%;
 	display: flex;
 	align-items: flex-end;
-	top: 100px;
+	top: 250px;
 	font-size: -webkit-xxx-large;
 	position: absolute;
+	display: block;
 }
 
 .logo{
@@ -155,8 +93,81 @@ a{
 	left: 200px;
 }
 
+label{
+	display: block;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+
 .menu{
-	font-size: 20px;
+	font-size: 20px;	
+	margin:0 30px 0 0;
+	text-align: center;
+	width: 100%;
+	display: none;
+}
+#toggle{
+	display: none;
+}
+.menu a{
+	margin: 0;
+	line-height: 70px;
+	display: block;
+}
+
+#toggle:checked + .menu{
+	display: block;
+	background-color: #35363A;
+	width: 100;
+}
+
+#toggle:checked + .frase{
+	display: none;
+}
+
+label{
+	cursor: pointer;
+	position: relative;
+	display: block;
+	height: 22px;
+	width: 30px;
+}
+
+label span{
+	position: absolute;
+	display: block;
+	height: 5px;
+	width: 100%;
+	border-radius: 30px;
+	background: #E7E9E6;
+	transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1){
+	top:0;
+}
+
+label span:nth-child(2){
+	top:8px;
+}
+
+label span:nth-child(3){
+	top:16px;
+}
+
+#toggle:checked + .bar1{
+	transform: rotate(-45deg);
+	top: 8px;
+}
+
+.nav:checked + label span:nth-child(2){
+	opacity: 0;
+}
+
+.tocar:checked + label span:nth-child(3){
+	transform: rotate(45deg);
+	top: 8px;
 }
 
 
@@ -350,15 +361,8 @@ footer{
 		list-style: none;
 		border-style: none;
 		font-size: 30px;
-		
-	}
-	.menu li{
-		margin-left: 10px;
-		list-style: none;
-	}
-	.menu li a{
-		display: block;
-		padding: 10px;
+		justify-content: space-between;
+
 	}
 
 	header p{
@@ -366,6 +370,22 @@ footer{
   border-bottom-width: 10px;
   
   border-left-width: 0;
+	}
+
+	.nave{
+		text-align: right;
+		height: 70px;
+		line-height: 70px;
+	}
+
+	label{
+		margin: 0 40px 0 0;
+		font-size: 36px;
+		line-height: 70px;
+		display: none;
+	}
+	#toggle{
+		display: none;
 	}
 }
 
